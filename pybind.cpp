@@ -8,7 +8,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(psi_bin,m)
+PYBIND11_MODULE(musr2py,m)
 {
   m.doc() = "pybind11 example plugin";
 
@@ -81,7 +81,7 @@ PYBIND11_MODULE(psi_bin,m)
 
   .def("__repr__",
     [](const MuSR_td_PSI_bin &a) {
-      return "<psi_bin.MuSR_td_PSI_bin>";
+      return "<musr2py.MuSR_td_PSI_bin>";
     }
   );
 }
