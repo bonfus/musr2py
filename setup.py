@@ -8,6 +8,9 @@ from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 from distutils.version import LooseVersion
 
+from pybind11.setup_helpers import Pybind11Extension, build_ext
+
+__version__ = "0.0.1"
 
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=''):
@@ -60,6 +63,14 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
+ext_modules = [
+    Pybind11Extension("musr2pi",
+        ["MuSR_td_PSI_bin.cpp"],
+        # Example: passing in the version to the compiled code
+        define_macros = [('VERSION_INFO', __version__)],
+        ),
+]
+
 setup(
     name='musr2py',
     version='0.0.1',
@@ -67,7 +78,9 @@ setup(
     author_email='bonfus@gmail.com',
     description='Read PSI bin with python',
     long_description='',
-    ext_modules=[CMakeExtension('musr2pi')],
-    cmdclass=dict(build_ext=CMakeBuild),
+    #ext_modules=[CMakeExtension('musr2pi')],
+    #cmdclass=dict(build_ext=CMakeBuild),
+    ext_modules=ext_modules,
+    cmdclass={"build_ext": build_ext},
     zip_safe=False,
 )
