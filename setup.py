@@ -64,8 +64,8 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
 ext_modules = [
-    Pybind11Extension("musr2pi",
-        ["MuSR_td_PSI_bin.cpp"],
+    Pybind11Extension("musr2py",
+        ["MuSR_td_PSI_bin.cpp","pybind.cpp"],
         # Example: passing in the version to the compiled code
         define_macros = [('VERSION_INFO', __version__)],
         ),
@@ -73,11 +73,11 @@ ext_modules = [
 
 setup(
     name='musr2py',
-    version='0.0.1',
+    version=__version__,
     author='Pietro Bonfa',
     author_email='bonfus@gmail.com',
-    description='Read PSI bin with python',
-    long_description='',
+    description='Read PSI bin with Python',
+    long_description='Read musr data from PSI with Python.',
     #ext_modules=[CMakeExtension('musr2pi')],
     #cmdclass=dict(build_ext=CMakeBuild),
     ext_modules=ext_modules,

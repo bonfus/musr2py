@@ -2,6 +2,9 @@
 #include <pybind11/stl.h>
 #include "MuSR_td_PSI_bin.h"
 
+#define STRINGIFY(x) #x
+#define MACRO_STRINGIFY(x) STRINGIFY(x)
+
 // ----------------
 // Python interface
 // ----------------
@@ -22,4 +25,9 @@ PYBIND11_MODULE(musr2py,m)
       return "<musr2py.MuSR_td_PSI_bin>";
     }
   );
+#ifdef VERSION_INFO
+  m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
+#else
+  m.attr("__version__") = "dev";
+#endif
 }
