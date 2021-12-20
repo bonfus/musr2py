@@ -1,6 +1,6 @@
 # musr2py
 
-Reads PSI bin data in python. This is just a wrapper around [MuSR_td_PSI_bin](http://lmu.web.psi.ch/docu/manuals/bulk_manuals/software/Class_MuSR_PSI/main.html)
+Reads PSI bin data in python. Actually just a wrapper around [MuSR_td_PSI_bin](http://lmu.web.psi.ch/docu/manuals/bulk_manuals/software/Class_MuSR_PSI/main.html).
 
 # Example
 

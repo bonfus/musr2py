@@ -77,10 +77,21 @@ setup(
     author='Pietro Bonfa',
     author_email='bonfus@gmail.com',
     description='Read PSI bin with Python',
-    long_description='Read musr data from PSI with Python.',
+    long_description='Read muon spin rotation and relaxation data from PSI directly in Python.',
     #ext_modules=[CMakeExtension('musr2pi')],
     #cmdclass=dict(build_ext=CMakeBuild),
     ext_modules=ext_modules,
     cmdclass={"build_ext": build_ext},
-    zip_safe=False,
+    license="GPL",
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX',
+        'Topic :: Scientific/Engineering :: Physics'
+    ],
 )
