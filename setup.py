@@ -10,7 +10,7 @@ from distutils.version import LooseVersion
 
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=''):
