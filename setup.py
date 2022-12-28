@@ -78,6 +78,7 @@ setup(
     author_email='bonfus@gmail.com',
     description='Read PSI bin with Python',
     long_description='Read muon spin rotation and relaxation data from PSI directly in Python.',
+    long_description_content_type='text/markdown',
     #ext_modules=[CMakeExtension('musr2pi')],
     #cmdclass=dict(build_ext=CMakeBuild),
     ext_modules=ext_modules,
