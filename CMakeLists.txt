@@ -14,10 +14,13 @@ endif()
 
 FetchContent_Declare(
   pybind11
-  URL https://github.com/pybind/pybind11/archive/v2.6.1.zip
+  URL https://github.com/pybind/pybind11/archive/v2.11.1.zip
 )
 FetchContent_GetProperties(pybind11)
 FetchContent_MakeAvailable(pybind11)
+
+# Add current directory to include path to make MuSR_td_PSI_bin.h visible
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Finally create the module
 pybind11_add_module(musr2py MuSR_td_PSI_bin.cpp pybind.cpp)
