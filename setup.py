@@ -68,6 +68,7 @@ ext_modules = [
         ["MuSR_td_PSI_bin.cpp","pybind.cpp"],
         # Example: passing in the version to the compiled code
         define_macros = [('VERSION_INFO', __version__)],
+        include_dirs = ['.']
         ),
 ]
 
