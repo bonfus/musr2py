@@ -10,7 +10,7 @@ from distutils.version import LooseVersion
 
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=''):
@@ -84,7 +84,7 @@ setup(
     #cmdclass=dict(build_ext=CMakeBuild),
     ext_modules=ext_modules,
     cmdclass={"build_ext": build_ext},
-    license="GPL",
+    license="GPL-3.0-or-later",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
