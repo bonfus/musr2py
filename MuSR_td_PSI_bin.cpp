@@ -3292,7 +3292,11 @@ double * MuSR_td_PSI_bin::get_histo_goodBins_minus_bckgrd_array(int histo_num , 
     string strData ;
 
     if (i < 0 || i >= int(number_histo))
+#if defined(_MSC_VER)
+      return "" ;
+#else 
       return NULL ;
+#endif
     else
     {
       strData = labels_histo[i] ;
